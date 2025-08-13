@@ -1,0 +1,76 @@
+// Importa tus variables para poder usarlas
+@import '../../../assets/scss/variables';
+
+.footer-container {
+  background-color: $color-primario; // Fondo azul oscuro
+  color: $blanco; // Texto blanco
+  padding: 3rem 5%; // Espacio interno generoso
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between; // Distribuye las columnas
+  flex-wrap: wrap; // Permite que las columnas se reacomoden en pantallas pequeñas
+  gap: 2rem; // Espacio entre columnas
+  margin-bottom: 2rem;
+}
+
+.footer-section {
+  flex: 1; // Cada sección intenta ocupar el mismo espacio
+  min-width: 250px; // Ancho mínimo antes de que se reacomoden
+
+  h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    color: $blanco;
+
+    // Línea decorativa
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 2px;
+      background-color: $color-secundario; // Detalle en naranja
+    }
+  }
+
+  p, ul, a {
+    color: rgba($blanco, 0.8); // Texto un poco más tenue que el blanco puro
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  i {
+    margin-right: 0.5rem; // Espacio entre el ícono y el texto
+    color: $color-secundario; // Íconos en naranja para que destaquen
+  }
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $blanco; // El ícono se vuelve blanco al pasar el mouse
+  }
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba($blanco, 0.1); // Línea divisoria sutil
+  color: rgba($blanco, 0.6);
+  font-size: 0.9rem;
+}

@@ -1,0 +1,55 @@
+// Importa tus variables para poder usarlas
+@import '../../../assets/scss/variables';
+
+.header-container {
+  display: flex; // ¡La clave para alinear elementos! Activa Flexbox.
+  justify-content: space-between; // Pone espacio entre el logo y los links.
+  align-items: center; // Centra verticalmente los elementos.
+  padding: 1rem 5%; // Espacio generoso: 1rem arriba/abajo, 5% a los lados.
+  background-color: $blanco;
+  border-bottom: 1px solid #eeeeee; // Una línea sutil para separar.
+  height: 80px; // Altura fija para el header.
+}
+
+.logo img {
+  max-height: 50px; // Ajusta el tamaño del logo para que no sea muy grande.
+}
+
+.nav-links {
+  list-style: none; // Quita los puntos de la lista.
+  margin: 0;
+  padding: 0;
+  display: flex; // Pone los enlaces uno al lado del otro.
+  gap: 2rem; // Espacio entre cada enlace.
+}
+
+.nav-links a {
+  text-decoration: none; // Quita el subrayado de los enlaces.
+  color: $texto-principal;
+  font-weight: 700; // Letra en negrita.
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  position: relative; // Necesario para el efecto de la línea inferior.
+  transition: color 0.3s ease; // Transición suave para el color.
+
+  // Efecto al pasar el mouse
+  &:hover {
+    color: $color-secundario; // Cambia al color naranja.
+  }
+
+  // Estilo para el enlace de la página activa
+  &.active-link {
+    color: $color-secundario;
+
+    // Línea decorativa debajo del enlace activo
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: $color-secundario;
+    }
+  }
+}
